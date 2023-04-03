@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     border-top-left-radius: 20px;
+    overflow-y: scroll;
     border-bottom-left-radius: 20px;
 
 
@@ -30,14 +31,18 @@
 
 
         &__stats{
-            padding: 20px;
+            padding: 20px 0;
             display: flex;
             flex-direction: column;
             gap: 20px;
 
             &__title{
                 font-size: 18px;
-                color: black;
+                color: $main_color;
+                border-bottom: 2px solid $main_color;
+                padding-bottom: 7px;
+                width: max-content;
+
             }
 
             .stats{
@@ -60,6 +65,136 @@
                         padding: 5px;
                         border-radius: 20px;
                         color: white;
+                    }
+                }
+            }
+        }
+
+        .charts{
+
+            &__title{
+                font-size: 18px;
+                color: $main_color;
+                padding-bottom: 5px;
+                width: max-content;
+                border-bottom: 2px solid $main_color;
+                margin-bottom: 20px;
+            }
+
+            &__details{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 25px;
+
+
+                .chart{
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .schoolinfo {
+
+            &__title{
+                font-size: 18px;
+                color: $main_color;
+                padding-bottom: 5px;
+                width: max-content;
+                border-bottom: 2px solid $main_color;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            &__content{
+                display: flex;
+                gap: 20px;
+                .map{
+                    flex: 4;
+                    padding: 20px;
+                    border-radius: 20px;
+                    background-color: white;
+                    height: 300px;
+                    width: 500px;
+                }
+                &__admins{
+                    flex: 2;
+                    background-color: white;
+                    border-radius: 20px;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .top__content{
+                        display: flex;
+                        justify-content: space-between;
+                        .column{
+                            display: flex;
+                            gap: 5px;
+                            flex-direction: column;
+                        }
+                    }
+
+                    .schoolinfo__name{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        img{
+                            width: 30px;
+                            height:30px;
+                            object-fit: cover;
+                            border-radius: 50px;
+                        }
+                    }
+
+
+                    .schoolinfo__label{
+                        color: $main_color;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    .schoolinfo__subs{
+                        display: flex;
+                        justify-content: center;
+                        margin-top: auto;   
+                        .endsin{
+                            background-color: $main_color;
+                            padding: 20px;
+                            border-radius: 20px;
+                            font-size: 20px;
+                            color: white;
+                            .subslink{
+                                padding: 10px;
+                                display: flex;
+                                justify-content: center;
+                                background-color: white;
+                                border-radius: 15px;
+                                cursor: pointer;
+                                border: 1px solid $main_color;
+                                transition: all .21s ease-in-out;
+                                &:hover{
+                                    background-color: transparent;
+                                    border: 1px solid white;
+                                }
+
+                                &:hover .link{
+                                    color: white;
+                                }
+
+                                .link{
+                                    text-decoration: none;
+                                    color: $main_color;
+                                }
+                            }
+                        }
+
                     }
                 }
             }

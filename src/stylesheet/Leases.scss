@@ -1,0 +1,179 @@
+.Leases{
+    background-color: $light_gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .orders{
+        flex: 3;
+        overflow-y: scroll;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        position: relative;
+
+        .static{
+            position: absolute;
+            padding: 20px;
+            background-color: $light_gray;
+            position: sticky;
+            z-index: 3;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .orders__title{
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            .orders__search{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                input{
+                    height: 40px;
+                    width: 90%;
+                    border-radius: 12px;
+                    border: none;
+                    padding: 20px;
+
+                    &::placeholder{
+                        color: $gray;
+                        font-size: 14px;
+                    }
+                }
+
+                .orders__filter{
+                    margin-left: auto;
+                    background-color: white;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 15px;
+                    border-radius: 12px;
+                    gap: 5px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    letter-spacing: 1.1px;
+                    cursor: pointer;
+
+                    i{
+                        transform: scale(1.7);
+                    }
+                }
+            }
+        }
+
+        .convetion__all{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+
+            .convention{
+                background-color: white;
+                border-radius: 20px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                cursor: pointer;
+                position: relative;
+
+                &:hover .show_more{
+                    opacity: 1;
+                    transform: translateY(20%);
+                }
+
+              .top__content{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .agency__image{
+                    width: 40px;
+                    height: 40px;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                .agency__name{
+                    font-size: 24px;
+                    color: $main_color;
+                    width: max-content;
+                    padding-bottom: 2px;
+                    border-bottom: 2px solid $main_color;
+                }
+
+                
+              }
+              .show_more{
+                position: absolute;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                bottom: 10%;
+                transform: translateY(0);
+                right: 10%;
+                opacity: 0;
+                transition: all .21s ease-in-out;
+            }
+            }
+        }
+    }
+    .convention__vehicules{
+        flex: 3;
+        padding: 20px;
+        overflow-y: scroll;
+        .convention__title{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .all_vehicules{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+            .vehicule{
+                background-color: white;
+                border-radius: 20px;
+                padding: 20px;
+                &__content{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    .vehicule__image{
+                        width: 30px;
+                        height: 30px;
+                        img{
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                    }
+                    .vehicule__name{
+                        margin-top: 20px;
+                        font-size: 20px;
+                    }
+                    .vehicule__details{
+                        display: flex;
+                        margin-top: 20px;
+                        align-content: center;
+                        justify-content: space-between;
+                        font-size: 12px;
+                        gap: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,9 +3,7 @@
 @import "./Driver.scss";
 @import "./SideBar.scss";
 @import "./Trajectory.scss";
-@import "./Vehicule.scss";
-
-
+@import "./Leases.scss";
 
 *{
     margin: 0;
@@ -32,6 +30,10 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+
+  .leaflet-container {
+    height: 100% ;
   }
 
 body{

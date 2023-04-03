@@ -389,7 +389,7 @@ function Trajectory() {
             <div class="map_info">
                 <OrdersMetaData MetaData={metaData}/>
                 <div className="map">
-                <MapContainer center={center} zoom={9}>
+                <MapContainer center={center} zoom={10}>
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
