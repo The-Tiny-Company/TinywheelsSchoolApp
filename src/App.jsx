@@ -8,6 +8,7 @@ import Vehicule from "./pages/Vehicule"
 import Clients from './pages/Clients';
 import SchoolDetail from './pages/SchoolDetail';
 import Leases from './pages/Leases';
+import ParcAuto from './pages/ParcAuto';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/vehicule' element={<Vehicule />}/>
           <Route path='/client' element={<Clients />}/>
           <Route path='/leases' element={<Leases />} />
+          <Route path='/parcauto' element={<ParcAuto />} />
         </Routes>
       
       </div>

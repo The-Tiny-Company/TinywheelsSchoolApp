@@ -135,7 +135,7 @@ function Dashboard() {
                   />
                    <Marker position={center}>
                     <Popup>
-                      A pretty CSS3 popup. <br /> Easily customizable.
+                    Ecole Marocaines des Sciences Ingenieur
                     </Popup>
                   </Marker>
                   </MapContainer>

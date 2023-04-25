@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/schoologo.png'
 import User from '../assets/user.png'
-import {Grid,BusFront,Person,GeoAltFill,PersonVcard,ClockHistory} from 'react-bootstrap-icons'
+import {Grid,BusFront,Person,GeoAltFill,PersonVcard,ClockHistory, Wrench} from 'react-bootstrap-icons'
 
 
 function SideBar() {
@@ -21,6 +21,7 @@ function SideBar() {
                     <li className={selected ==="Vehicule" ? "selected" : ""} onClick={()=>{setSelected("Vehicule")}}><BusFront /><Link to={"/vehicule"}>Vehicule</Link></li>
                     <li className={selected ==="Driver" ? "selected" : ""} onClick={()=>{setSelected("Driver")}}><PersonVcard /><Link to={"/driver"}>Driver</Link></li>
                     <li className={selected ==="Client" ? "selected" : ""} onClick={()=>{setSelected("Client")}}><Person /><Link to={"/client"}>Clients</Link></li>
+                    <li className={selected ==="ParcAuto" ? "selected" : ""} onClick={()=>{setSelected("ParcAuto")}}><Wrench /><Link to={"/parcauto"}>Parc Auto</Link></li>
                     <li className={selected ==="Trajectory" ? "selected" : ""} onClick={()=>{setSelected("Trajectory")}}><GeoAltFill /><Link to={"/trajectory"}>Ride</Link></li>
                     <li className={selected ==="Leases" ? "selected" : ""} onClick={()=>{setSelected("Leases")}}><ClockHistory /><Link to={"/leases"}>Leases</Link></li>
                     
