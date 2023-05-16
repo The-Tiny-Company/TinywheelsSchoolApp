@@ -1,8 +1,30 @@
 import React from 'react'
 import Logo from '../assets/logo.png'
 import { ArrowRight } from 'react-bootstrap-icons'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 function Leases() {
+  const [conventions,setConvenions]=useState([])
+  const [agencies,setAgencies] = useState([])
+  const loadData=async()=>{
+    const res = await axios.get("http://127.0.0.1:8080/api/v1/convention")
+    setConvenions(res.data)
+    console.log(res.data);
+  }
+
+  const loadAgency=async()=>{
+    const res = await axios.get("http://127.0.0.1:8080/api/v1/agency")
+    setAgencies(res.data)
+    console.log(res.data);
+  }
+
+  useEffect(()=>{
+    loadData();
+    loadAgency();
+  },[])
+
   return (
     <div className='Leases'>
       <div class="orders">
@@ -21,89 +43,39 @@ function Leases() {
                 </div>
 
                 <div class="convetion__all">
-                  <div className="convention">
-                  <div className="top__content">
-                    <div className="agency__image">
-                    <img src={Logo} alt="" />
-                  </div>
-                  <div className="agency__name">
-                    Agence Massar
-                  </div>
-                  <div className="convention__timer">
-                    Ends in 09/03/2023
-                  </div>
-                  </div>
-                  <div className="show_more">
-                    Show More <ArrowRight />
-                  </div>
-                </div>
-                <div className="convention">
-                  <div className="top__content">
-                    <div className="agency__image">
-                    <img src={Logo} alt="" />
-                  </div>
-                  <div className="agency__name">
-                    Agence Nasser
-                  </div>
-                  <div className="convention__timer">
-                    Ends in 22/06/2023
-                  </div>
-                  </div>
-                  <div className="show_more">
-                    Show More <ArrowRight />
-                  </div>
-                </div>
+                  {conventions.map((convention)=>{
+                    return(
+                      <div className="convention">
+                      <div className="top__content">
+                        <div className="agency__image">
+                        <img src={require(`../assets/${convention.agency.img}`)} alt="" />
+                      </div>
+                      <div className="agency__name">
+                        {convention.agency.name}
+                      </div>
+                      <div className="convention__timer">
+                        {convention.date}
+                      </div>
+                      </div>
+                      <div className="show_more">
+                        Show More <ArrowRight />
+                      </div>
+                    </div>
+                    )
+                  })}
                   </div>
         </div>
         <div className="convention__vehicules">
-          <div className="convention__title">
-            Leased Vehicules
-          </div>
-          <div className="all_vehicules">
-            <div className="vehicule">
-              <div className="vehicule__content">
-              <div className="vehicule__image">
-                <img src={Logo} alt="" />
-              </div>
-              <div className="vehicule__name">
-                Merci 10 ;)
-              </div>
-              <div className="vehicule__details">
-                <div className="seatnbr">
-                  21
-                </div>
-                <div className="status">
-                  Disponible
-                </div>
-                <div className="destination">
-                  Hay Malika
-                </div>
-              </div>
-              </div>
-            </div>
-            <div className="vehicule">
-              <div className="vehicule__content">
-              <div className="vehicule__image">
-                <img src={Logo} alt="" />
-              </div>
-              <div className="vehicule__name">
-                Merci 10 ;)
-              </div>
-              <div className="vehicule__details">
-                <div className="seatnbr">
-                  21
-                </div>
-                <div className="status">
-                  Disponible
-                </div>
-                <div className="destination">
-                  Hay Malika
-                </div>
-              </div>
-              </div>
-            </div>
-
-          </div>
+          <form>
+            <input type="date"/>
+            <select value="Pick Your Agency">
+                {agencies.map((agency)=>{
+                  return(
+                    <option value={agency.id}>{agency.name}</option>
+                  )
+                })}
+            </select>
+          </form>
         </div>
 
     </div>
